@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+MAINTAINER Matheus Henrique de Souza "mh.matheussouza@gmail.com"
 
 RUN apt-get update \
   && apt-get install -y wget openjdk-7-jdk x11-apps \
