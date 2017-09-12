@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ -d /home/developer/.ireport ]; then
+  sudo chown developer:developer /home/developer/.ireport
+fi
+exec /opt/iReport-4.1.3/bin/ireport
