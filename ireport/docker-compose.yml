@@ -3,7 +3,6 @@ version: "2"
 services:
   ireport:
     build: .
-    image: ireport
     volumes:
     - $HOME/.ireport:/root/.ireport
     - /tmp/.X11-unix:/tmp/.X11-unix
