@@ -3,11 +3,9 @@ version: "2"
 services:
   ireport:
     build: .
-    image: ireport
     volumes:
-    - $HOME/.ireport:/root/.ireport
+    - $HOME/.ireport:/developer/.ireport
     - /tmp/.X11-unix:/tmp/.X11-unix
-    - $HOME/reports:/root/reports
-    privileged: true
+    - $HOME:/home/developer
     environment:
       DISPLAY:

@@ -7,4 +7,17 @@ RUN apt-get update \
 
 RUN wget https://ufpr.dl.sourceforge.net/project/ireport/iReport/iReport-4.1.3/iReport-4.1.3.tar.gz -O - | tar xvzf - -C /opt/ > /dev/null
 
-CMD /opt/iReport-4.1.3/bin/ireport
+ADD run /usr/local/bin/ireport
+
+RUN chmod +x /usr/local/bin/ireport && \
+    mkdir -p /home/developer && \
+    echo "developer:x:1000:1000:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
+    echo "developer:x:1000:" >> /etc/group && \
+    echo "developer ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/developer && \
+    chmod 0440 /etc/sudoers.d/developer && \
+    chown developer:developer -R /home/developer
+
+USER developer
+ENV HOME /home/developer
+WORKDIR /home/developer
+CMD /usr/local/bin/ireport
