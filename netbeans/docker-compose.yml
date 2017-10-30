@@ -8,3 +8,5 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - .:/workspace
+      - $HOME:/home/developer
+      - $HOME/.netbeans:/developer/.netbeans
