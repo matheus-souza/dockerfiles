@@ -6,4 +6,3 @@ if [ -d /home/developer/.netbeans ]; then
 fi
 exec /opt/netbeans-8.2/bin/netbeans
 
-#sudo chmod 777 /home/developer/.ireport* -R
