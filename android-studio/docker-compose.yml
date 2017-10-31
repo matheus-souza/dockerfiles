@@ -7,6 +7,7 @@ services:
       DISPLAY: $DISPLAY
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      # - .:/workspace
-      # - $HOME:/home/developer
-      # - $HOME/.netbeans:/developer/.netbeans
+      - $HOME:/home/developer
+      - $HOME/.AndroidStudio3.0:/developer/.AndroidStudio3.0
+      - /dev/bus/usb:/dev/bus/usb
+    privileged: true
