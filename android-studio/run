@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -d /home/developer/.AndroidStudio3.0 ]; then
+  sudo chown developer:developer /home/developer/.AndroidStudio3.0
+  sudo chmod 777 /home/developer/.AndroidStudio3.0* -R
+fi
+exec /opt/android-studio/bin/studio.sh
