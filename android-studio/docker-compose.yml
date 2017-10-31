@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  android-studio:
+    build: .
+    environment:
+      DISPLAY: $DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # - .:/workspace
+      # - $HOME:/home/developer
+      # - $HOME/.netbeans:/developer/.netbeans
