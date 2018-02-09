@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -d /home/developer/.kodi ]; then
+  sudo chown developer:developer /home/developer/.kodi
+  sudo chmod 777 /home/developer/.kodi* -R
+fi
+
+exec kodi
