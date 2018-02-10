@@ -4,8 +4,13 @@ services:
   kodi:
     build: .
     volumes:
-    - $HOME/.ireport:/developer/.ireport
-    - /tmp/.X11-unix:/tmp/.X11-unix
-    - $HOME:/home/developer
+      - $HOST_PATH:/home/$USER
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/shadow:/etc/shadow:ro
+      - /etc/sudoers.d:/etc/sudoers.d:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    ports:
+      - $PORT:8080
     environment:
-      DISPLAY:
+      - DISPLAY
